@@ -1,57 +1,57 @@
-﻿using System;
-
-namespace Porgram
+﻿namespace Aufgabe_3
 {
-    class Aufgaben
+    class Program
     {
-        public static int[] zahlen = { 19, 17, 13, 30, 40, 50, 60, 70, 80, 90 };
-        public static void aufgabe11_1_1() // 1
+        static void Main(string[] args)
         {
-            for (int i = 0; i < zahlen.Length; i++)
+            int[] daten = new int[10];
             {
-                Console.Write(zahlen[i]+ "\t");
-            }
-            Console.WriteLine();
-        }
-        public static int[] aufgabe11_1_2(int[] input) // 2
-        {
-            for (int i = 0; i < input.Length; i++)
-            {
-                input[i] = input[i]*input[i];
-            }
-            return input;
-        }
-        public static int[] aufgabe11_1_3(int[] input) // ´3
-        {
-            int temp = input[0];
-            for (int i = 1;i < input.Length; i++)
-            {
-                input[i - 1] = input[i];
-            }
-            input[input.Length-1] = temp;
-            return input;
-        }
-        public static int[] aufgabe11_1_4(int[] input) // 4
-        {
-            Console.Write("geben sie einene index ein: ");
-            int pos = Convert.ToInt32(Console.ReadLine());
+                daten[0] = 19 * 19;
+                daten[1] = 17 * 17;
+                daten[2] = 13 * 13;
 
-            
-            for (int i = pos; i < input.Length-1; i++)
-            {
-                input[i] = input[i+1];
-            }
 
-            Console.WriteLine("geben sie eine zahl ein: ");
-            input[input.Length - 1] = Convert.ToInt32(Console.ReadLine());
-            return input;
+                for (int index = 3; index < daten.Length; index++)
+                {
+
+
+                    daten[index] = index * 10 * index * 10;
+
+
+                }
+                foreach (int element in daten)
+                {
+
+                    Console.Write($" {element}\t");
+
+
+                }
+                Console.WriteLine();
+                int temp = daten[0];
+                Console.Write("geben sie einene index ein: ");
+                int pos = Convert.ToInt32(Console.ReadLine());
+                for (int index = 0; index < daten.Length - 1; index++)
+                {
+
+                    daten[index] = daten[index + 1];
+
+
+                }
+                Console.WriteLine("geben sie eine zahl ein: ");
+                daten[daten.Length - 1] = Convert.ToInt32(Console.ReadLine());
+
+                daten[daten.Length - 1] = temp;
+                foreach (int element in daten)
+                {
+
+                    Console.Write($" {element}\t");
+
+
+                }
+
+
+
+            }
         }
-        public static void Main()
-        {
-            aufgabe11_1_1();
-            aufgabe11_1_4(zahlen);
-            aufgabe11_1_1(); //hallo
-            Console.ReadLine();
-        }   
     }
 }
