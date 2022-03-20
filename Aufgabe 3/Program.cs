@@ -41,7 +41,7 @@ namespace Aufgabe_3
                 }
                 Console.WriteLine("geben sie eine zahl ein: ");
                 daten[daten.Length - 1] = Convert.ToInt32(Console.ReadLine());
-                
+               
                 daten[daten.Length - 1] = temp;
                 foreach (int element in daten)
                 {
