@@ -29,10 +29,11 @@ namespace Aufgabe_4
 
                 }
                 Console.WriteLine();
-                int temp = daten[0];
-                Console.Write("geben sie einene index ein: ");
-                int pos = Convert.ToInt32(Console.ReadLine());
-                for (int index = 0; index < daten.Length - 1; index++)
+               
+
+                Console.Write("geben sie einenen index ein: ");
+                int stelle = Convert.ToInt32(Console.ReadLine());
+                for (int index = stelle; index < daten.Length - 1; index++)
                 {
 
                     daten[index] = daten[index + 1];
@@ -42,7 +43,7 @@ namespace Aufgabe_4
                 Console.WriteLine("geben sie eine zahl ein: ");
                 daten[daten.Length - 1] = Convert.ToInt32(Console.ReadLine());
 
-                daten[daten.Length - 1] = temp;
+            
                 foreach (int element in daten)
                 {
 
